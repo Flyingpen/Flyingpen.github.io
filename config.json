@@ -7,5 +7,8 @@
     "script":"<script src='https://blog.meekdai.com/assets/GmeekTOC.js'></script>",
     "email":"penergumen@gmail.com",
     "bottomText":"本站作品使用CC BY-NC协议，转载需保留作者署名和原出处，且不允许商业使用！",
-    "GMEEK_VERSION":"last"
+    "GMEEK_VERSION":"last"，
+    "ogImage":"https://cdn.jsdelivr.net/gh/Meekdai/meekdai.github.io/logo64.jpg",
+    "primerCSS":"<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
+    "urlMode":"issue"
 }
