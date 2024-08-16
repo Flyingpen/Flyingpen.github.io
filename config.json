@@ -12,5 +12,5 @@
     "GMEEK_VERSION":"last",
     "ogImage":"https://cdn.jsdelivr.net/gh/Meekdai/meekdai.github.io/logo64.jpg",
     "primerCSS":"<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
-    "urlMode":"issue"
-}
+    "urlMode":"issue",
+    "foot":<a href="https://icp.gov.moe/?keyword=20244464" target="_blank">萌ICP备20244464号</a>
