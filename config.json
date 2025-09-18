@@ -13,7 +13,7 @@
     "ogImage":"https://cdn.jsdelivr.net/gh/Meekdai/meekdai.github.io/logo64.jpg",
     "primerCSS":"<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
     "urlMode":"issue",
-    "filingNum":"<a href='https://icp.gov.moe/?keyword=20244464' target='_blank'>萌ICP备20244464号</a>"
+    "filingNum":"<a href='https://icp.gov.moe/?keyword=20244464' target='_blank'>萌ICP备20244464号</a>",
     "faviconUrl":"https://files.catbox.moe/vl1gh9.ico",
     "startSite":"02/16/2015",
     "onePageListNum":15,
@@ -32,6 +32,6 @@
     "indexScript":"",
     "showPostSource":1,
     "rssSplit":"sentence",
-    "needComment":0,
+    "needComment":1,
 }
 
