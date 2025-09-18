@@ -1,5 +1,6 @@
 {
     "title":"敬天文集",
+    "displayTitle":"敬天文集",
     "homeUrl":"https:/book.911016.xyz",
     "subTitle":"一杯酒，一首诗，不问少年志",
     "avatarUrl":"https://files.catbox.moe/vl1gh9.ico",
@@ -13,4 +14,24 @@
     "primerCSS":"<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
     "urlMode":"issue",
     "filingNum":"<a href='https://icp.gov.moe/?keyword=20244464' target='_blank'>萌ICP备20244464号</a>"
+    "faviconUrl":"https://files.catbox.moe/vl1gh9.ico",
+    "startSite":"02/16/2015",
+    "onePageListNum":15,
+    "iconList":{"music":"M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13Z"},
+    "exlink":{"music":"https://music.meekdai.com"},
+    "commentLabelColor":"#006b75",
+    "yearColorList":["#bc4c00", "#0969da", "#1f883d", "#A333D0"],
+    "i18n":"CN",
+    "UTC":8,
+    "themeMode":"manual",
+    "dayTheme":"light",
+    "nightTheme":"dark_colorblind",
+    "style":"",
+    "head":"",
+    "indexStyle":"",
+    "indexScript":"",
+    "showPostSource":1,
+    "rssSplit":"sentence",
+    "needComment":0,
 }
+
