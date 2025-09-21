@@ -27,7 +27,7 @@
     "style":"",
     "head":"",
     "indexStyle":"",
-    "indexScript":"<script src='modernAnimation.js'></script><script src='visualEffects.js'></script><script src='interactiveUI.js'></script><script src='typographyEffects.js'></script>",
+    "indexScript":"",
     "showPostSource":1,
     "rssSplit":"sentence",
     "needComment":1
