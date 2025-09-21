@@ -1,0 +1,579 @@
+  /* Global system tuned for Apple-inspired light/dark aesthetics */                                                                            
+  :root {                                                                                                                                       
+    --color-ink: #1d1d1f;                                                                                                                       
+    --color-ink-subtle: #515154;                                                                                                                
+    --color-bg: #f5f5f7;                                                                                                                        
+    --color-bg-elevated: rgba(255, 255, 255, 0.88);                                                                                             
+    --color-panel: #ffffff;                                                                                                                     
+    --color-accent-primary: #0071e3;                                                                                                            
+    --color-accent-secondary: #34c759;                                                                                                          
+    --color-accent-tertiary: #5ac8fa;                                                                                                           
+    --color-border: rgba(60, 60, 67, 0.12);                                                                                                     
+    --color-border-strong: rgba(60, 60, 67, 0.28);                                                                                              
+    --color-muted: #8e8e93;                                                                                                                     
+    --color-muted-strong: #6e6e73;                                                                                                              
+    --shadow-soft: 0 32px 64px -44px rgba(28, 28, 30, 0.45);                                                                                    
+    --shadow-hover: 0 28px 60px -36px rgba(28, 28, 30, 0.38);                                                                                   
+    --radius-large: 20px;                                                                                                                       
+    --radius-pill: 999px;                                                                                                                       
+    --transition-base: 240ms cubic-bezier(.32, .72, .4, 1);                                                                                     
+    --backdrop-blur: 18px;                                                                                                                      
+  }                                                                                                                                             
+                                                                                                                                                
+  html {                                                                                                                                        
+    scroll-behavior: smooth;                                                                                                                    
+  }                                                                                                                                             
+                                                                                                                                                
+  body {                                                                                                                                        
+    position: relative;                                                                                                                         
+    max-width: 960px;                                                                                                                           
+    margin: 0 auto;                                                                                                                             
+    padding: 72px 48px 96px;                                                                                                                    
+    background: linear-gradient(180deg, #f9f9fb 0%, #f5f5f7 40%, #f0f1f4 100%);                                                                 
+    color: var(--color-ink);                                                                                                                    
+    font-family: "SF Pro Display", "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;    
+    line-height: 1.7;                                                                                                                           
+    letter-spacing: 0.01em;                                                                                                                     
+    transition: color var(--transition-base), background-color var(--transition-base), filter var(--transition-base);                           
+    isolation: isolate;                                                                                                                         
+  }                                                                                                                                             
+                                                                                                                                                
+  body::before,                                                                                                                                 
+  body::after {                                                                                                                                 
+    content: "";                                                                                                                                
+    position: fixed;                                                                                                                            
+    inset: 0;                                                                                                                                   
+    z-index: -2;                                                                                                                                
+    pointer-events: none;                                                                                                                       
+  }                                                                                                                                             
+                                                                                                                                                
+  body::before {                                                                                                                                
+    background:                                                                                                                                 
+      radial-gradient(circle at 15% 20%, rgba(0, 113, 227, 0.14), transparent 55%),                                                             
+      radial-gradient(circle at 82% 15%, rgba(88, 200, 250, 0.12), transparent 60%),                                                            
+      radial-gradient(circle at 50% 95%, rgba(52, 199, 89, 0.08), transparent 60%);                                                             
+    filter: blur(0);                                                                                                                            
+  }                                                                                                                                             
+                                                                                                                                                
+  body::after {                                                                                                                                 
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 50%);                                               
+    mix-blend-mode: screen;                                                                                                                     
+    opacity: 0.6;                                                                                                                               
+  }                                                                                                                                             
+                                                                                                                                                
+  #header {                                                                                                                                     
+    position: sticky;                                                                                                                           
+    top: 40px;                                                                                                                                  
+    display: flex;                                                                                                                              
+    align-items: center;                                                                                                                        
+    justify-content: space-between;                                                                                                             
+    gap: 32px;                                                                                                                                  
+    margin-bottom: 48px;                                                                                                                        
+    padding: 24px;                                                                                                                              
+    background: var(--color-bg-elevated);                                                                                                       
+    border-radius: var(--radius-large);                                                                                                         
+    border: 1px solid var(--color-border);                                                                                                      
+    backdrop-filter: blur(var(--backdrop-blur));                                                                                                
+    box-shadow: var(--shadow-soft);                                                                                                             
+    transition: box-shadow var(--transition-base), border-color var(--transition-base), background var(--transition-base);                      
+  }                                                                                                                                             
+                                                                                                                                                
+  #header:hover {                                                                                                                               
+    box-shadow: var(--shadow-hover);                                                                                                            
+    border-color: var(--color-border-strong);                                                                                                   
+  }                                                                                                                                             
+                                                                                                                                                
+  .avatar {                                                                                                                                     
+    width: 72px;                                                                                                                                
+    height: 72px;                                                                                                                               
+    border-radius: 22px;                                                                                                                        
+    overflow: hidden;                                                                                                                           
+    border: 1px solid rgba(255, 255, 255, 0.6);                                                                                                 
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5), 0 10px 30px -24px rgba(0, 0, 0, 0.45);                                                
+  }                                                                                                                                             
+                                                                                                                                                
+  .title-left {                                                                                                                                 
+    display: flex;                                                                                                                              
+    align-items: center;                                                                                                                        
+    gap: 20px;                                                                                                                                  
+  }                                                                                                                                             
+                                                                                                                                                
+  .title-left h1 {                                                                                                                              
+    margin: 0;                                                                                                                                  
+    font-size: 2.2rem;                                                                                                                          
+    font-weight: 650;                                                                                                                           
+    letter-spacing: -0.015em;                                                                                                                   
+    color: var(--color-ink);                                                                                                                    
+  }                                                                                                                                             
+                                                                                                                                                
+  .title-left p {                                                                                                                               
+    margin: 4px 0 0;                                                                                                                            
+    color: var(--color-muted-strong);                                                                                                           
+    font-size: 0.95rem;                                                                                                                         
+  }                                                                                                                                             
+                                                                                                                                                
+  .title-right {                                                                                                                                
+    display: flex;                                                                                                                              
+    align-items: center;                                                                                                                        
+    gap: 14px;                                                                                                                                  
+  }                                                                                                                                             
+                                                                                                                                                
+  .title-right .btn {                                                                                                                           
+    display: inline-flex;                                                                                                                       
+    align-items: center;                                                                                                                        
+    gap: 10px;                                                                                                                                  
+    padding: 12px 20px;                                                                                                                         
+    border-radius: var(--radius-pill);                                                                                                          
+    border: 1px solid rgba(60, 60, 67, 0.18);                                                                                                   
+    color: var(--color-ink);                                                                                                                    
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.78));                                                  
+    box-shadow: 0 12px 26px -24px rgba(28, 28, 30, 0.45);                                                                                       
+    transition: transform var(--transition-base), border-color var(--transition-base), color var(--transition-base), background                 
+  var(--transition-base), box-shadow var(--transition-base);                                                                                    
+  }                                                                                                                                             
+                                                                                                                                                
+  .title-right .btn:hover,                                                                                                                      
+  .title-right .btn:focus-visible {                                                                                                             
+    transform: translateY(-3px);                                                                                                                
+    border-color: var(--color-accent-primary);                                                                                                  
+    color: var(--color-accent-primary);                                                                                                         
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 247, 255, 0.88));                                                  
+    box-shadow: 0 24px 40px -30px rgba(0, 113, 227, 0.4);                                                                                       
+  }                                                                                                                                             
+                                                                                                                                                
+  #content > div:first-child {                                                                                                                  
+    margin-bottom: 28px;                                                                                                                        
+    padding: 22px 28px;                                                                                                                         
+    border-left: 4px solid var(--color-accent-primary);                                                                                         
+    border-radius: 0 var(--radius-large) var(--radius-large) 0;                                                                                 
+    background: rgba(255, 255, 255, 0.78);                                                                                                      
+    font-style: italic;                                                                                                                         
+    color: var(--color-muted-strong);                                                                                                           
+    box-shadow: 0 18px 36px -36px rgba(28, 28, 30, 0.5);                                                                                        
+  }                                                                                                                                             
+                                                                                                                                                
+  .SideNav {                                                                                                                                    
+    border-radius: var(--radius-large);                                                                                                         
+    border: 1px solid var(--color-border);                                                                                                      
+    background: rgba(255, 255, 255, 0.82);                                                                                                      
+    box-shadow: var(--shadow-soft);                                                                                                             
+    overflow: hidden;                                                                                                                           
+    backdrop-filter: blur(var(--backdrop-blur));                                                                                                
+    transition: box-shadow var(--transition-base), transform var(--transition-base), border-color var(--transition-base);                       
+  }                                                                                                                                             
+                                                                                                                                                
+  .SideNav:hover {                                                                                                                              
+    transform: translateY(-2px);                                                                                                                
+    box-shadow: var(--shadow-hover);                                                                                                            
+    border-color: var(--color-border-strong);                                                                                                   
+  }                                                                                                                                             
+                                                                                                                                                
+  .SideNav-item {                                                                                                                               
+    position: relative;                                                                                                                         
+    padding: 18px 24px;                                                                                                                         
+    color: var(--color-ink);                                                                                                                    
+    transition: background var(--transition-base), transform var(--transition-base), color var(--transition-base), box-shadow var(--transition- 
+  base);                                                                                                                                        
+    border-bottom: 1px solid var(--color-border);                                                                                               
+  }                                                                                                                                             
+                                                                                                                                                
+  .SideNav-item:last-child {                                                                                                                    
+    border-bottom: none;                                                                                                                        
+  }                                                                                                                                             
+                                                                                                                                                
+  .SideNav-item::before {                                                                                                                       
+    content: "";                                                                                                                                
+    position: absolute;                                                                                                                         
+    top: 50%;                                                                                                                                   
+    left: 14px;                                                                                                                                 
+    width: 6px;                                                                                                                                 
+    height: 6px;                                                                                                                                
+    border-radius: 50%;                                                                                                                         
+    background: var(--color-muted);                                                                                                             
+    opacity: 0;                                                                                                                                 
+    transform: translate(-50%, -50%) scale(0.4);                                                                                                
+    transition: transform var(--transition-base), opacity var(--transition-base), background var(--transition-base);                            
+  }                                                                                                                                             
+                                                                                                                                                
+  .SideNav-item:hover,                                                                                                                          
+  .SideNav-item:focus-visible {                                                                                                                 
+    background: rgba(0, 113, 227, 0.08);                                                                                                        
+    color: var(--color-accent-primary);                                                                                                         
+    transform: translateX(6px);                                                                                                                 
+    box-shadow: inset 4px 0 0 0 rgba(0, 113, 227, 0.55);                                                                                        
+  }                                                                                                                                             
+                                                                                                                                                
+  .SideNav-item:hover::before,                                                                                                                  
+  .SideNav-item:focus-visible::before {                                                                                                         
+    opacity: 1;                                                                                                                                 
+    transform: translate(-50%, -50%) scale(1);                                                                                                  
+    background: var(--color-accent-primary);                                                                                                    
+  }                                                                                                                                             
+                                                                                                                                                
+  .SideNav-item .listTitle {                                                                                                                    
+    font-size: 1.02rem;                                                                                                                         
+    font-weight: 600;                                                                                                                           
+    margin-bottom: 4px;                                                                                                                         
+  }                                                                                                                                             
+                                                                                                                                                
+  .SideNav-item p {                                                                                                                             
+    margin: 0;                                                                                                                                  
+    color: var(--color-muted);                                                                                                                  
+    font-size: 0.9rem;                                                                                                                          
+  }                                                                                                                                             
+                                                                                                                                                
+  .section {                                                                                                                                    
+    margin-bottom: 64px;                                                                                                                        
+    padding: 32px;                                                                                                                              
+    background: var(--color-panel);                                                                                                             
+    border-radius: var(--radius-large);                                                                                                         
+    border: 1px solid var(--color-border);                                                                                                      
+    box-shadow: 0 28px 60px -48px rgba(28, 28, 30, 0.45);                                                                                       
+    transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);                       
+  }                                                                                                                                             
+                                                                                                                                                
+  .section:hover {                                                                                                                              
+    transform: translateY(-4px);                                                                                                                
+    border-color: var(--color-border-strong);                                                                                                   
+    box-shadow: 0 32px 70px -50px rgba(28, 28, 30, 0.5);                                                                                        
+  }                                                                                                                                             
+                                                                                                                                                
+  .section h2 {                                                                                                                                 
+    margin-top: 0;                                                                                                                              
+    margin-bottom: 18px;                                                                                                                        
+    font-size: 1.6rem;                                                                                                                          
+    font-weight: 650;                                                                                                                           
+    letter-spacing: -0.01em;                                                                                                                    
+    color: var(--color-ink);                                                                                                                    
+  }                                                                                                                                             
+                                                                                                                                                
+  .section p,                                                                                                                                   
+  .section li {                                                                                                                                 
+    color: var(--color-ink-subtle);                                                                                                             
+  }                                                                                                                                             
+                                                                                                                                                
+  .section strong {                                                                                                                             
+    color: var(--color-ink);                                                                                                                    
+  }                                                                                                                                             
+                                                                                                                                                
+  .section ul {                                                                                                                                 
+    padding-left: 18px;                                                                                                                         
+    margin: 0;                                                                                                                                  
+  }                                                                                                                                             
+                                                                                                                                                
+  .section ul li + li {                                                                                                                         
+    margin-top: 6px;                                                                                                                            
+  }                                                                                                                                             
+                                                                                                                                                
+  .section code {                                                                                                                               
+    padding: 2px 6px;                                                                                                                           
+    border-radius: 6px;                                                                                                                         
+    background: rgba(60, 60, 67, 0.08);                                                                                                         
+    color: var(--color-ink);                                                                                                                    
+    font-size: 0.88rem;                                                                                                                         
+  }                                                                                                                                             
+                                                                                                                                                
+  .section pre {                                                                                                                                
+    margin: 24px 0;                                                                                                                             
+    padding: 20px 24px;                                                                                                                         
+    border-radius: 14px;                                                                                                                        
+    background: rgba(28, 28, 30, 0.04);                                                                                                         
+    border: 1px solid rgba(60, 60, 67, 0.1);                                                                                                    
+    overflow: auto;                                                                                                                             
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);                                                                                         
+  }                                                                                                                                             
+                                                                                                                                                
+  .section pre code {                                                                                                                           
+    display: block;                                                                                                                             
+    background: transparent;                                                                                                                    
+    padding: 0;                                                                                                                                 
+    color: var(--color-ink);                                                                                                                    
+  }                                                                                                                                             
+                                                                                                                                                
+  .tag-group {                                                                                                                                  
+    display: flex;                                                                                                                              
+    flex-wrap: wrap;                                                                                                                            
+    gap: 10px;                                                                                                                                  
+    margin-top: 24px;                                                                                                                           
+  }                                                                                                                                             
+                                                                                                                                                
+  .tag {                                                                                                                                        
+    display: inline-flex;                                                                                                                       
+    align-items: center;                                                                                                                        
+    gap: 6px;                                                                                                                                   
+    padding: 8px 14px;                                                                                                                          
+    border-radius: var(--radius-pill);                                                                                                          
+    border: 1px solid rgba(60, 60, 67, 0.16);                                                                                                   
+    background: rgba(255, 255, 255, 0.82);                                                                                                      
+    color: var(--color-muted-strong);                                                                                                           
+    font-size: 0.92rem;                                                                                                                         
+    transition: color var(--transition-base), border-color var(--transition-base), background var(--transition-base);                           
+  }                                                                                                                                             
+                                                                                                                                                
+  .tag:hover {                                                                                                                                  
+    color: var(--color-accent-primary);                                                                                                         
+    border-color: var(--color-accent-primary);                                                                                                  
+    background: rgba(0, 113, 227, 0.08);                                                                                                        
+  }                                                                                                                                             
+                                                                                                                                                
+  .grid {                                                                                                                                       
+    display: grid;                                                                                                                              
+    gap: 24px;                                                                                                                                  
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));                                                                                
+  }                                                                                                                                             
+                                                                                                                                                
+  .card {                                                                                                                                       
+    padding: 26px 24px;                                                                                                                         
+    border-radius: var(--radius-large);                                                                                                         
+    border: 1px solid var(--color-border);                                                                                                      
+    background: rgba(255, 255, 255, 0.9);                                                                                                       
+    box-shadow: 0 28px 52px -44px rgba(28, 28, 30, 0.45);                                                                                       
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);                       
+  }                                                                                                                                             
+                                                                                                                                                
+  .card:hover,                                                                                                                                  
+  .card:focus-within {                                                                                                                          
+    transform: translateY(-6px);                                                                                                                
+    border-color: var(--color-border-strong);                                                                                                   
+    box-shadow: 0 38px 72px -50px rgba(0, 113, 227, 0.32);                                                                                      
+  }                                                                                                                                             
+                                                                                                                                                
+  .card h3 {                                                                                                                                    
+    margin-top: 0;                                                                                                                              
+    margin-bottom: 12px;                                                                                                                        
+    font-size: 1.25rem;                                                                                                                         
+    font-weight: 600;                                                                                                                           
+    color: var(--color-ink);                                                                                                                    
+  }                                                                                                                                             
+                                                                                                                                                
+  .card p {                                                                                                                                     
+    margin: 0;                                                                                                                                  
+    color: var(--color-ink-subtle);                                                                                                             
+  }                                                                                                                                             
+                                                                                                                                                
+  .card a {                                                                                                                                     
+    color: var(--color-accent-primary);                                                                                                         
+    text-decoration: none;                                                                                                                      
+    transition: opacity var(--transition-base), text-decoration-color var(--transition-base);                                                   
+  }                                                                                                                                             
+                                                                                                                                                
+  .card a:hover,                                                                                                                                
+  .card a:focus-visible {                                                                                                                       
+    opacity: 0.8;                                                                                                                               
+    text-decoration: underline;                                                                                                                 
+    text-decoration-color: rgba(0, 113, 227, 0.7);                                                                                              
+  }                                                                                                                                             
+                                                                                                                                                
+  blockquote {                                                                                                                                  
+    margin: 28px 0;                                                                                                                             
+    padding: 18px 24px;                                                                                                                         
+    border-left: 4px solid var(--color-accent-primary);                                                                                         
+    border-radius: 0 var(--radius-large) var(--radius-large) 0;                                                                                 
+    background: rgba(255, 255, 255, 0.78);                                                                                                      
+    color: var(--color-ink-subtle);                                                                                                             
+    font-style: italic;                                                                                                                         
+  }                                                                                                                                             
+                                                                                                                                                
+  table {                                                                                                                                       
+    width: 100%;                                                                                                                                
+    border-collapse: collapse;                                                                                                                  
+    margin: 32px 0;                                                                                                                             
+    border-radius: var(--radius-large);                                                                                                         
+    overflow: hidden;                                                                                                                           
+    box-shadow: 0 18px 36px -28px rgba(28, 28, 30, 0.4);                                                                                        
+  }                                                                                                                                             
+                                                                                                                                                
+  th,                                                                                                                                           
+  td {                                                                                                                                          
+    padding: 16px 18px;                                                                                                                         
+    border-bottom: 1px solid var(--color-border);                                                                                               
+  }                                                                                                                                             
+                                                                                                                                                
+  th {                                                                                                                                          
+    text-align: left;                                                                                                                           
+    font-weight: 600;                                                                                                                           
+    color: var(--color-muted-strong);                                                                                                           
+  }                                                                                                                                             
+                                                                                                                                                
+  tr:hover {                                                                                                                                    
+    background: rgba(0, 113, 227, 0.06);                                                                                                        
+  }                                                                                                                                             
+                                                                                                                                                
+  ::selection {                                                                                                                                 
+    background: rgba(0, 113, 227, 0.35);                                                                                                        
+    color: #ffffff;                                                                                                                             
+  }                                                                                                                                             
+                                                                                                                                                
+  ::-webkit-scrollbar {                                                                                                                         
+    width: 11px;                                                                                                                                
+  }                                                                                                                                             
+                                                                                                                                                
+  ::-webkit-scrollbar-track {                                                                                                                   
+    background: rgba(60, 60, 67, 0.06);                                                                                                         
+  }                                                                                                                                             
+                                                                                                                                                
+  ::-webkit-scrollbar-thumb {                                                                                                                   
+    background: linear-gradient(180deg, rgba(0, 113, 227, 0.78), rgba(52, 199, 89, 0.72));                                                      
+    border-radius: var(--radius-pill);                                                                                                          
+  }                                                                                                                                             
+                                                                                                                                                
+  /* Responsive adjustments */                                                                                                                  
+  @media (max-width: 720px) {                                                                                                                   
+    body {                                                                                                                                      
+      padding: 48px 20px 68px;                                                                                                                  
+    }                                                                                                                                           
+                                                                                                                                                
+    #header {                                                                                                                                   
+      flex-direction: column;                                                                                                                   
+      align-items: flex-start;                                                                                                                  
+      gap: 18px;                                                                                                                                
+      padding: 20px;                                                                                                                            
+      top: 20px;                                                                                                                                
+    }                                                                                                                                           
+                                                                                                                                                
+    .avatar {                                                                                                                                   
+      width: 64px;                                                                                                                              
+      height: 64px;                                                                                                                             
+    }                                                                                                                                           
+                                                                                                                                                
+    .title-right {                                                                                                                              
+      width: 100%;                                                                                                                              
+      justify-content: flex-start;                                                                                                              
+    }                                                                                                                                           
+                                                                                                                                                
+    .SideNav {                                                                                                                                  
+      border-radius: 16px;                                                                                                                      
+    }                                                                                                                                           
+                                                                                                                                                
+    .SideNav-item {                                                                                                                             
+      padding: 16px 20px;                                                                                                                       
+    }                                                                                                                                           
+                                                                                                                                                
+    .section {                                                                                                                                  
+      padding: 24px;                                                                                                                            
+    }                                                                                                                                           
+                                                                                                                                                
+    .grid {                                                                                                                                     
+      grid-template-columns: 1fr;                                                                                                               
+    }                                                                                                                                           
+  }                                                                                                                                             
+                                                                                                                                                
+  /* Motion accessibility */                                                                                                                    
+  @media (prefers-reduced-motion: reduce) {                                                                                                     
+    *,                                                                                                                                          
+    *::before,                                                                                                                                  
+    *::after {                                                                                                                                  
+      animation-duration: 1ms !important;                                                                                                       
+      animation-iteration-count: 1 !important;                                                                                                  
+      transition-duration: 1ms !important;                                                                                                      
+      scroll-behavior: auto !important;                                                                                                         
+    }                                                                                                                                           
+  }                                                                                                                                             
+                                                                                                                                                
+  /* Dark mode token overrides */                                                                                                               
+  html[data-color-mode="dark"] {                                                                                                                
+    --color-ink: #f5f5f7;                                                                                                                       
+    --color-ink-subtle: #c7c7cc;                                                                                                                
+    --color-bg: #090909;                                                                                                                        
+    --color-bg-elevated: rgba(23, 23, 24, 0.82);                                                                                                
+    --color-panel: rgba(22, 22, 24, 0.92);                                                                                                      
+    --color-accent-primary: #0a84ff;                                                                                                            
+    --color-accent-secondary: #30d158;                                                                                                          
+    --color-accent-tertiary: #64d2ff;                                                                                                           
+    --color-border: rgba(84, 84, 88, 0.22);                                                                                                     
+    --color-border-strong: rgba(99, 99, 102, 0.36);                                                                                             
+    --color-muted: #8e8e93;                                                                                                                     
+    --color-muted-strong: #aeaeb2;                                                                                                              
+    --shadow-soft: 0 36px 72px -44px rgba(0, 0, 0, 0.68);                                                                                       
+    --shadow-hover: 0 32px 68px -38px rgba(0, 0, 0, 0.6);                                                                                       
+  }                                                                                                                                             
+                                                                                                                                                
+  html[data-color-mode="dark"] body {                                                                                                           
+    background: radial-gradient(circle at 50% -10%, rgba(10, 132, 255, 0.18), transparent 40%), linear-gradient(180deg, #0e0e11 0%, #050506     
+  100%);                                                                                                                                        
+    color: var(--color-ink);                                                                                                                    
+  }                                                                                                                                             
+                                                                                                                                                
+  html[data-color-mode="dark"] body::before {                                                                                                   
+    background:                                                                                                                                 
+      radial-gradient(circle at 20% 15%, rgba(10, 132, 255, 0.16), transparent 55%),                                                            
+      radial-gradient(circle at 85% 20%, rgba(52, 209, 88, 0.12), transparent 60%),                                                             
+      radial-gradient(circle at 60% 90%, rgba(100, 210, 255, 0.1), transparent 65%);                                                            
+  }                                                                                                                                             
+                                                                                                                                                
+  html[data-color-mode="dark"] body::after {                                                                                                    
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 60%);                                              
+    mix-blend-mode: screen;                                                                                                                     
+    opacity: 0.22;                                                                                                                              
+  }                                                                                                                                             
+                                                                                                                                                
+  html[data-color-mode="dark"] .SideNav,                                                                                                        
+  html[data-color-mode="dark"] .section,                                                                                                        
+  html[data-color-mode="dark"] .card,                                                                                                           
+  html[data-color-mode="dark"] #content > div:first-child,                                                                                      
+  html[data-color-mode="dark"] blockquote,                                                                                                      
+  html[data-color-mode="dark"] .tag {                                                                                                           
+    background: var(--color-panel);                                                                                                             
+    border-color: rgba(255, 255, 255, 0.08);                                                                                                    
+    box-shadow: 0 26px 60px -40px rgba(0, 0, 0, 0.72);                                                                                          
+  }                                                                                                                                             
+                                                                                                                                                
+  html[data-color-mode="dark"] .SideNav-item {                                                                                                  
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);                                                                                         
+    color: var(--color-ink);                                                                                                                    
+  }                                                                                                                                             
+                                                                                                                                                
+  html[data-color-mode="dark"] .SideNav-item:hover,                                                                                             
+  html[data-color-mode="dark"] .SideNav-item:focus-visible {                                                                                    
+    background: rgba(10, 132, 255, 0.16);                                                                                                       
+    box-shadow: inset 4px 0 0 0 rgba(10, 132, 255, 0.55);                                                                                       
+  }                                                                                                                                             
+                                                                                                                                                
+  html[data-color-mode="dark"] .title-right .btn {                                                                                              
+    border-color: rgba(255, 255, 255, 0.08);                                                                                                    
+    background: linear-gradient(180deg, rgba(44, 44, 46, 0.96), rgba(28, 28, 30, 0.88));                                                        
+    color: var(--color-ink);                                                                                                                    
+  }                                                                                                                                             
+                                                                                                                                                
+  html[data-color-mode="dark"] .title-right .btn:hover,                                                                                         
+  html[data-color-mode="dark"] .title-right .btn:focus-visible {                                                                                
+    background: linear-gradient(180deg, rgba(58, 58, 60, 0.98), rgba(44, 44, 46, 0.9));                                                         
+    color: var(--color-accent-primary);                                                                                                         
+    border-color: rgba(10, 132, 255, 0.55);                                                                                                     
+    box-shadow: 0 30px 60px -44px rgba(10, 132, 255, 0.4);                                                                                      
+  }                                                                                                                                             
+                                                                                                                                                
+  html[data-color-mode="dark"] .section pre {                                                                                                   
+    background: rgba(255, 255, 255, 0.04);                                                                                                      
+    border-color: rgba(255, 255, 255, 0.08);                                                                                                    
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);                                                                                        
+    color: var(--color-ink);                                                                                                                    
+  }                                                                                                                                             
+                                                                                                                                                
+  html[data-color-mode="dark"] table {                                                                                                          
+    background: rgba(28, 28, 30, 0.92);                                                                                                         
+  }                                                                                                                                             
+                                                                                                                                                
+  html[data-color-mode="dark"] th,                                                                                                              
+  html[data-color-mode="dark"] td,                                                                                                              
+  html[data-color-mode="dark"] h2,                                                                                                              
+  html[data-color-mode="dark"] h3,                                                                                                              
+  html[data-color-mode="dark"] p,                                                                                                               
+  html[data-color-mode="dark"] li {                                                                                                             
+    color: var(--color-ink);                                                                                                                    
+  }                                                                                                                                             
+                                                                                                                                                
+  html[data-color-mode="dark"] tr:hover {                                                                                                       
+    background: rgba(10, 132, 255, 0.1);                                                                                                        
+  }                                                                                                                                             
+                                                                                                                                                
+  html[data-color-mode="dark"] ::selection {                                                                                                    
+    background: rgba(10, 132, 255, 0.55);                                                                                                       
+
+  html[data-color-mode="dark"] ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  html[data-color-mode="dark"] ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(10, 132, 255, 0.9), rgba(52, 209, 88, 0.85));
+  }
