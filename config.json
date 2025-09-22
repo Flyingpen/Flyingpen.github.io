@@ -5,7 +5,7 @@
     "subTitle":"一杯酒，一首诗，不问少年志",
     "avatarUrl":"https://files.catbox.moe/vl1gh9.ico",
     "singlePage":["link"],
-    "allHead": "<style>body[data-ui-pending] #content {opacity:0;transition:opacity 0.3s ease;}</style><script>document.documentElement.setAttribute('data-ui-pending','true');<\/script><script src='https://blog.meekdai.com/Gmeek/plugins/GmeekBSZ.js'><\/script><script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'><\/script>"，
+    "allHead": "<style>body[data-ui-pending] #content {opacity:0;transition:opacity 0.3s ease;}</style><script>document.documentElement.setAttribute('data-ui-pending','true')</script><script src='https://blog.meekdai.com/Gmeek/plugins/GmeekBSZ.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script>"，
     "script":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>",
     "email":"penergumen@gmail.com",
     "bottomText":"本站作品使用CC BY-NC协议，转载需保留作者署名和原出处，且不允许商业使用！",
